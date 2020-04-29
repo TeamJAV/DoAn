@@ -1,0 +1,56 @@
+200 OK – Trả về thành công cho những phương thức GET, PUT, PATCH hoặc DELETE.
+201 Created – Trả về khi một Resouce vừa được tạo thành công.
+204 No Content – Trả về khi Resource xoá thành công.
+304 Not Modified – Client có thể sử dụng dữ liệu cache.
+400 Bad Request – Request không hợp lệ
+401 Unauthorized – Request cần có auth.
+403 Forbidden – bị từ chối không cho phép.
+404 Not Found – Không tìm thấy resource từ URI
+405 Method Not Allowed – Phương thức không cho phép với user hiện tại.
+410 Gone – Resource không còn tồn tại, Version cũ đã không còn hỗ trợ.
+415 Unsupported Media Type – Không hỗ trợ kiểu Resource này.
+422 Unprocessable Entity – Dữ liệu không được xác thực
+429 Too Many Requests – Request bị từ chối do bị giới hạn
+
+
+
+Bài 8-3-2020: phân tích thuật toán
++Solution1:
+	Đầu tiên em tìm số max trong mảng đó, nếu max mà là số âm thì auto trả lại 1
+	Nếu nó là số dương thì làm tiếp:
+		Em tạo 1 mảng mới đó len là bằng số max có giá trị False
+		Duyệt trong mảng nào có số dương thì đánh true tại vị trí số đó -1
+		Duyệt mảng các số dương đó, nếu trả False thì là số nhỏ nhất ko có trong mảng trả lại i+1
+		Nếu mà true hết tức là các số dương đó liền kề nhau thì trả số max+1
++Solution2:
+	Chỉ đúng nếu các số trong mảng đừng lớn quá len của mảng
+	tại vị trí i sẽ có giá trị là i+1  (ví dụ tại ô thứ 4 sẽ có giá trị là 5)
+	nếu giá trị tại i mà khác giá trị tại (giá trị tại i) -1 ( ví dụ tại ô thứ 5-1 mà ko phải là 5) thì
+sẽ swap 2 giá trị cho nhau 
+	nếu tk nào tại vị trí i mà ko có giá trị i+1
+
+
+
+
+
+
+
+
+
+__,.ヘヽ.　　　　/　,ー､ 〉
+　　　　　＼ ', !-─‐-i　/　/´
+　　　 　 ／｀ｰ'　　　 L/／｀ヽ､
+　　 　 /　 ／,　 /|　 ,　 ,　　　 ',
+　　　ｲ 　/ /-‐/　ｉ　L_ ﾊ ヽ!　 i
+　　　 ﾚ ﾍ 7ｲ｀ﾄ　 ﾚ'ｧ-ﾄ､!ハ|　 |
+　　　　 !,/7 '0'　　 ´0iソ| 　 |　　　
+　　　　 |.从"　　_　　 ,,,, / |./ 　 |
+　　　　 ﾚ'| i＞.､,,__　_,.イ / 　.i 　|
+　　　　　 ﾚ'| | / k_７_/ﾚ'ヽ,　ﾊ.　|
+　　　　　　 | |/i 〈|/　 i　,.ﾍ |　i　|
+　　　　　　.|/ /　ｉ： 　 ﾍ!　　＼　|
+　　　 　 　 kヽ>､ﾊ 　 _,.ﾍ､ 　 /､!
+　　　　　　 !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+　　　　　　 ﾚ'ヽL__|___i,___,ンﾚ|ノ
+　　　　　 　　　ﾄ-,/　|___./
+　　　　　 　　　'ｰ'　　!_,.
